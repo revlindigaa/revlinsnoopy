@@ -1,0 +1,526 @@
+        /* Modern Native CSS with Peanuts Comic Palette */
+        :root {
+            --peanuts-yellow: #FFD02C;
+            --peanuts-yellow-light: #FFF8D6;
+            --snoopy-red: #E63946;
+            --snoopy-black: #1E1E1E;
+            --snoopy-white: #FFFFFF;
+            --bg-cream: #FFFDF5;
+            --card-bg: #FFFFFF;
+            --text-main: #222222;
+            --text-muted: #555555;
+            --border-thick: 3px solid #1E1E1E;
+            --shadow-comic: 5px 5px 0px #1E1E1E;
+            --shadow-comic-sm: 3px 3px 0px #1E1E1E;
+            --shadow-comic-lg: 8px 8px 0px #1E1E1E;
+            --radius-comic: 16px;
+            --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Comic Sans MS', sans-serif;
+        }
+
+        [data-theme="dark"] {
+            --bg-cream: #18181C;
+            --card-bg: #24242C;
+            --text-main: #F0F0F0;
+            --text-muted: #B0B0B0;
+            --snoopy-black: #000000;
+            --peanuts-yellow-light: #3A3210;
+            --border-thick: 3px solid #FFD02C;
+            --shadow-comic: 5px 5px 0px #FFD02C;
+            --shadow-comic-sm: 3px 3px 0px #FFD02C;
+            --shadow-comic-lg: 8px 8px 0px #FFD02C;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Container Limit */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--peanuts-yellow);
+            border-bottom: var(--border-thick);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1E1E1E;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-badge {
+            background: var(--snoopy-red);
+            color: var(--snoopy-white);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 2px solid #1E1E1E;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            text-decoration: none;
+            border: var(--border-thick);
+            padding: 8px 16px;
+            font-weight: 700;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: var(--shadow-comic-sm);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background-color: var(--snoopy-red);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 4px 4px 0px var(--snoopy-black);
+        }
+
+        .theme-toggle {
+            background: var(--card-bg);
+            border: var(--border-thick);
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-comic-sm);
+            font-size: 1.2rem;
+        }
+
+        /* Banner Hero Section */
+        .hero {
+            margin: 30px 0;
+            background: var(--peanuts-yellow-light);
+            border: var(--border-thick);
+            border-radius: var(--radius-comic);
+            padding: 35px 25px;
+            box-shadow: var(--shadow-comic-lg);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .hero-img-container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Snoopy SVG Artwork Container */
+        .snoopy-art {
+            width: 220px;
+            height: 220px;
+            background: white;
+            border: var(--border-thick);
+            border-radius: 50%;
+            box-shadow: var(--shadow-comic);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .snoopy-art img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .page-content {
+            padding: 45px 0 20px;
+        }
+
+        .page-heading {
+            max-width: 720px;
+            margin-bottom: 25px;
+        }
+
+        .page-heading h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .eyebrow {
+            color: var(--snoopy-red);
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            margin-bottom: 8px;
+        }
+
+        .page-heading p:last-child {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .page-content .card p + p {
+            margin-top: 15px;
+        }
+
+        .quote-card {
+            margin-top: 25px;
+        }
+
+        blockquote {
+            background: var(--peanuts-yellow-light);
+            border: var(--border-thick);
+            border-radius: 12px;
+            box-shadow: var(--shadow-comic-sm);
+            font-size: 1.15rem;
+            font-style: italic;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .doc-section h2 {
+            align-items: center;
+            display: flex;
+            font-size: 1.35rem;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .doc-section ul {
+            line-height: 1.8;
+            margin-left: 20px;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--snoopy-red);
+            margin-bottom: 15px;
+        }
+
+        .badge-list {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .chip {
+            background: var(--card-bg);
+            border: 2px solid var(--text-main);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* Tab Content Display */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards Layout */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: var(--border-thick);
+            border-radius: var(--radius-comic);
+            padding: 24px;
+            box-shadow: var(--shadow-comic);
+            position: relative;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            border-bottom: 2px dashed var(--text-muted);
+            padding-bottom: 10px;
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            background: var(--peanuts-yellow);
+            padding: 8px;
+            border-radius: 10px;
+            border: 2px solid #1E1E1E;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        /* Profile Info Table / Lists */
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+
+        .info-list li strong {
+            color: var(--text-main);
+        }
+
+        .info-list li span {
+            text-align: right;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Timeline for Roles/Alter Egos */
+        .alter-ego-item {
+            background: var(--bg-cream);
+            border: 2px solid var(--text-main);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 0px var(--text-main);
+        }
+
+        .alter-ego-item h4 {
+            color: var(--snoopy-red);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Code Blocks & Command Snippets */
+        .code-panel {
+            background-color: #1e1e2e;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            margin: 12px 0;
+            position: relative;
+            overflow-x: auto;
+            border: 2px solid #000;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: var(--peanuts-yellow);
+            color: #000;
+            border: 1px solid #000;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .copy-btn:hover {
+            background: #fff;
+        }
+
+        .step-number {
+            background: var(--snoopy-red);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-right: 8px;
+            border: 1px solid #000;
+        }
+
+        /* Documentation Guide Section Styling */
+        .doc-section {
+            background: var(--card-bg);
+            border: var(--border-thick);
+            border-radius: var(--radius-comic);
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow-comic);
+        }
+
+        .doc-section h3 {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .table-custom {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .table-custom th, .table-custom td {
+            border: 2px solid var(--text-main);
+            padding: 10px 12px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .table-custom th {
+            background-color: var(--peanuts-yellow);
+            color: #000;
+            font-weight: 800;
+        }
+
+        /* Interactive Quote Generator */
+        .quote-box {
+            background: var(--peanuts-yellow-light);
+            border: var(--border-thick);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 15px;
+            font-style: italic;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-comic-sm);
+        }
+
+        .btn-action {
+            background-color: var(--snoopy-red);
+            color: white;
+            border: 2px solid #000;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 3px 3px 0px #000;
+            display: inline-block;
+        }
+
+        .btn-action:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px #000;
+        }
+
+        /* Toast Alert */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--text-main);
+            color: var(--bg-cream);
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 2px solid var(--peanuts-yellow);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 2000;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 25px;
+            border-top: var(--border-thick);
+            background: var(--peanuts-yellow);
+            font-weight: 700;
+        }
